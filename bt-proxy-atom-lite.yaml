@@ -1,0 +1,32 @@
+esphome:
+  name: bt-proxy-atom-lite
+  friendly_name: bt_proxy_atom_lite
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "usKLeREPtOYQ2UIDZWp5wAEad6OC3Li9Y1rajSGBRgU="
+
+ota:
+  - platform: esphome
+    password: "44934ff7a58b27a1030cf638bf0d4dba"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Bt-Proxy-Atom-Lite"
+    password: "1MliACiszXNg"
+
+captive_portal:
+    
